@@ -1,0 +1,132 @@
+.header-top-right {
+  list-style: none;
+}
+.custom_select {
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 120px; /* Ensures it doesn’t exceed a reasonable width */
+  height: 40px;
+  color: #fff;
+  background-color: #333; /* Matches the white text */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none; /* Removes default styles */
+  cursor: pointer;
+}
+
+.custom_select:hover {
+  background-color: #444; /* Slightly darker on hover */
+}
+
+.custom_select:focus {
+  border-color: #007bff; /* Highlighted border for focus */
+  outline: none;
+}
+
+#header-sticky {
+  background: #e20935;
+}
+.hero-section {
+  background: #e20935;
+  height: 60vh;
+  min-height: 300px; /* Ensures visibility on very small screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Restrict container width for readability */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+}
+
+.hero-content h4 {
+  font-size: 42px;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 18px;
+  max-width: 600px; /* Restrict text width for readability */
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h4 {
+    font-size: 32px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h4 {
+    font-size: 24px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+}
+
+.header-logo {
+  width: 150px;
+  height: 50px;
+}
+.header-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===========================booking-section==================================== */
+.booking-section {
+  /* margin-top: 200px; */
+}
+
+.booking-wrapper {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form-top_list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter_select_box .no-border {
+  border: none !important;
+  outline: none !important;
+}
+.filter_select_box > select.no-border {
+  font-size: 12px !important;
+}
+
+.booking_form_inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.filter_select_box {
+  font-size: 12px;
+}
+
+.booking-form input {
+  border-radius: 5px;
+  padding: 10px;
+}
