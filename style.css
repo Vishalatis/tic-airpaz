@@ -28,12 +28,34 @@
 }
 .hero-section {
   background: #e20935;
-  height: 60vh;
+  height: 70vh;
   min-height: 300px; /* Ensures visibility on very small screens */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  position: relative; /* Ensure the pseudo-element aligns correctly */
+  overflow: hidden; /* Prevent the pseudo-element from overflowing */
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://cdn.airpaz.com/cdn-cgi/image/w=2600,h=1220,f=webp/forerunner-next/img/illustration/v2/hero/ge-download-app-banner.png);
+  background-position: 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.2; /* Adjust opacity value here */
+  z-index: 1; /* Place the pseudo-element behind content */
+}
+
+.hero-section > * {
+  position: relative; /* Ensure content stays above the pseudo-element */
+  z-index: 2;
 }
 
 .container {
@@ -92,41 +114,183 @@
   height: 100%;
 }
 
-/* ===========================booking-section==================================== */
-.booking-section {
-  /* margin-top: 200px; */
-}
-
+/* ==========================================Booking Section Styling =================================================== */
 .booking-wrapper {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .booking-form-top_list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter_select_box select {
+  border: none !important;
+  background-color: #f8f9fa;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .filter_select_box .no-border {
-  border: none !important;
-  outline: none !important;
+  border: none;
+  z-index: 99999;
 }
-.filter_select_box > select.no-border {
-  font-size: 12px !important;
+
+.filter_select_box select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .booking_form_inputs {
-  display: flex;
-  gap: 10px;
+  margin-top: 20px;
 }
 
-.filter_select_box {
+.form-control {
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.booking_form_inputs input[type="date"] {
   font-size: 12px;
 }
 
-.booking-form input {
-  border-radius: 5px;
-  padding: 10px;
+.filter_select_box a {
+  font-size: 12px;
 }
+
+/* ================================miss_out_list================================================ */
+.miss_out_list {
+  list-style: none;
+  margin-top: 10px;
+}
+.miss_out_list li {
+  text-align: start;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.miss_out_list li:hover a {
+  color: #e20935;
+  letter-spacing: 1px;
+}
+
+/* ============================eclusive fligt=================================================== */
+
+/* Flight Recommendation Container */
+.flight-recommendation-slides {
+  position: relative;
+  height: 180px;
+  width: 100%; /* Adjust based on the layout container width */
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.flight-recommendation-slides:hover {
+  transform: scale(1.05); /* Optional: Slight zoom effect on hover */
+}
+
+/* Image Styling */
+.city-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  transition: all 0.2s ease; /* Smooth transition */
+}
+
+/* Overlay Styling */
+.overlay {
+  background-color: rgb(0 0 0 / 71%);
+  padding: 1rem; /* Adjust padding as needed */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Flight Description Styling */
+.flight-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.title-alt {
+  font-size: 1rem;
+  color: #ddd;
+  position: absolute;
+}
+
+.flight-destination {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.plane-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Divider Styling */
+.divider {
+  background-color: white;
+  width: 50%; /* Adjust the divider width as needed */
+  height: 2px;
+  margin-top: 1rem;
+  transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+/* Flight Price Styling */
+.flight-price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: white;
+  display: flex;
+  gap: 5px;
+}
+
+.text-medium {
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Arrow Icon Styling */
+.arrow-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+/* ====================================================================== */
