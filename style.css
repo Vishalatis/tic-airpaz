@@ -293,4 +293,25 @@
   cursor: pointer; /* Change cursor to pointer for better UX */
 }
 
-/* ====================================================================== */
+/* ============================promo========================================== */
+.promo_dic_card {
+  transition: box-shadow 0.3s ease;
+  padding: 20px;
+}
+
+.promo_dic_card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds the box shadow effect */
+}
+/* ============================help-section========================================== */
+.help-section {
+  background: #e20935;
+  background-image: url(https://cdn.airpaz.com/cdn-cgi/image/w=2200,h=400,f=webp/forerunner-next/img/illustration/v2/hero/banner-help-desktop.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
