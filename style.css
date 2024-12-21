@@ -315,3 +315,10 @@
   align-items: center;
   justify-content: center;
 }
+
+/* ============================airline-info-card========================================== */
+.airline-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
